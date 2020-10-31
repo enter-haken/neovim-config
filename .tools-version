@@ -1,0 +1,5 @@
+elixir 1.10.4
+erlang 23.0.3
+neovim nightly
+nodejs 14.8.0
+yarn 1.22.10
