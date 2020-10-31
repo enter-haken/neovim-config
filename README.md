@@ -62,7 +62,7 @@ When you restart neovim, the editor should be ready.
 | --------------------------- | -------------------------------------------- | 
 | `elixir-editors/vim-elixir` | elixir support for vim (syntax highlighting) |
 
-# TOOD
+# TODO 
 
 * add custom elixir snippets
 
