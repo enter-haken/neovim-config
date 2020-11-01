@@ -27,16 +27,16 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-## after first start
-
-After first start you get some errors about missing files and so on.
-This will vanish after you have installed all plugins.
+## the first two starts
 
 ```
-:PlugInstall
+nvim +PlugInstall
 ```
 
-When you restart neovim, the editor should be ready.
+will install all necessary plugins.
+After the install is completed, you should restart `nvim`.
+All `coc-extensions` will be installed on second start.
+From that moment on, you are ready.
 
 # General plugins 
 
@@ -54,7 +54,6 @@ When you restart neovim, the editor should be ready.
 | ------------------------- | ------------------------------------ |
 | `neovim/nvim-lspconfig`   | setups the language server           |
 | `eoclide/coc.nvim`        | intellisense engine with LSP support |
-| `lixir-lsp/coc-elixir´    | elixir LSP extension                 |
 
 # Elixir related plugins
 

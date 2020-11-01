@@ -10,7 +10,6 @@ Plug 'chiel92/vim-autoformat'
 " language server related
 Plug 'neovim/nvim-lspconfig'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 " elixir
 Plug 'elixir-editors/vim-elixir'
