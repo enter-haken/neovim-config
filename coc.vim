@@ -1,1 +1,11 @@
-let g:coc_global_extensions = ['coc-snippets', 'coc-elixir', 'coc-json', 'coc-html', 'coc-css', 'coc-tsserver', 'coc-python', 'coc-yaml']
+let g:coc_global_extensions = [
+      \'coc-css', 
+      \'coc-docker',
+      \'coc-elixir', 
+      \'coc-html', 
+      \'coc-json', 
+      \'coc-python', 
+      \'coc-snippets', 
+      \'coc-tsserver', 
+      \'coc-yaml'
+      \]
