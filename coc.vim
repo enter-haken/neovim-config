@@ -11,3 +11,5 @@ let g:coc_global_extensions = [
       \'coc-tsserver', 
       \'coc-yaml'
       \]
+
+autocmd FileType scss setl iskeyword+=@-@

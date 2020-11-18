@@ -1,7 +1,10 @@
 call plug#begin()
 
-" general stuff
+" themes
 Plug 'nanotech/jellybeans.vim'
+Plug 'arcticicestudio/nord-vim'
+
+" general stuff
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
