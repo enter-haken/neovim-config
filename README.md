@@ -10,7 +10,29 @@ This is a rewrite of my [original][1] configuration.
 You can find all requirements including `neovim` itself in the `.tools-version` file.
 This file is used by [asdf][2].
 
-You can install all requirements by calling
+## ubuntu
+
+Before using `asdf` you need to install some packages.
+
+### asdf
+
+```
+$ sudo apt-get install unzip curl
+```
+
+### erlang
+
+```
+$ sudo apt-get install build-essential autoconf m4 libncurses5-dev libssh-dev
+```
+
+### nodejs
+
+```
+$ bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+```
+
+At this point you can call
 
 ```
 $ asdf install
@@ -27,18 +49,27 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
+You also have to install necessary python requirements.
+
+```
+$ pip3 install pynvim --user
+```
+
 ## the first two starts
 
 ```
-nvim +PlugInstall
+nvim +PlugInstall +qa
 ```
 
 will install all necessary plugins.
-After the install is completed, you should restart `nvim`.
+`nvim` will quit after install.
+
 All `coc-extensions` will be installed on second start.
 From that moment on, you are ready.
 
-# General plugins 
+# plugins
+
+## General plugins 
 
 | plugin                    | description                        |
 | ------------------------- | ---------------------------------- |
@@ -48,14 +79,14 @@ From that moment on, you are ready.
 | `bling/vim-airline`       | status line                        |
 | `chiel92/vim-autoformat`  | autoformat for several languages   |
 
-# Language server related plugins
+## Language server related plugins
 
 | plugin                    | description                          |
 | ------------------------- | ------------------------------------ |
 | `neovim/nvim-lspconfig`   | setups the language server           |
 | `eoclide/coc.nvim`        | intellisense engine with LSP support |
 
-# Elixir related plugins
+## Elixir related plugins
 
 | plugin                      | description                                  | 
 | --------------------------- | -------------------------------------------- | 
