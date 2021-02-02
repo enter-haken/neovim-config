@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'chiel92/vim-autoformat'
+Plug 'tpope/vim-surround'
 
 " language server related
 Plug 'neovim/nvim-lspconfig'

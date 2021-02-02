@@ -9,6 +9,7 @@ let g:coc_global_extensions = [
       \'coc-sh',
       \'coc-snippets', 
       \'coc-tsserver', 
+      \'coc-tailwindcss',
       \'coc-yaml'
       \]
 
