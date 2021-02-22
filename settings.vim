@@ -1,4 +1,4 @@
-colorscheme jellybeans 
+colorscheme nord 
 
 let mapleader=','
 

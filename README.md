@@ -52,6 +52,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 You also have to install necessary python requirements.
 
 ```
+$ sudo apt-get install python3-pip
 $ pip3 install pynvim --user
 ```
 
