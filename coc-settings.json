@@ -4,5 +4,13 @@
   // cd ~/.elixir-ls
   // mix deps.get && mix compile && mix elixir_ls.release -o release
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
-  "diagnostic.maxWindowHeight": 32
+  "diagnostic.maxWindowHeight": 32,
+  "python.jediEnabled": false,
+  "python.linting.pylintArgs": ["--generate-members"],
+  "languageserver": {
+    "robotframework_ls": {
+      "command": "robotframework_ls",
+      "filetypes": ["robot"]
+    }
+  }
 }
