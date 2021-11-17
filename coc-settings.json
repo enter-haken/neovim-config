@@ -11,6 +11,12 @@
     "robotframework_ls": {
       "command": "robotframework_ls",
       "filetypes": ["robot"]
+    },"terraform": {
+    "command": "terraform-ls",
+    "args": ["serve"],
+    "filetypes": ["terraform","tf"],
+    "initializationOptions":{},
+    "settings":{}
     }
   }
 }
