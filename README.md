@@ -5,6 +5,25 @@ I use neovim mostly for software development task, which reflects my configurati
 
 This is a rewrite of my [original][1] configuration.
 
+# Quick shot
+
+If you just want to try out this configuration you can use an ubuntu container like
+
+```
+$ docker run --rm -it ubuntu /bin/bash
+```
+
+and then run the following commands
+
+```
+apt-get update && apt-get install -y git
+git clone https://github.com/enter-haken/neovim-config ~/.config/nvim
+cd ~/.config/nvim
+./prepare_first_time_required_packages.sh
+source ~/.bashrc
+./prepare_first_time_start.sh
+```
+
 # requirements
 
 You can find all requirements including `neovim` itself in the `.tools-version` file.

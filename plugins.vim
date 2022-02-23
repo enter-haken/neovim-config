@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
 " language server related
 Plug 'neovim/nvim-lspconfig'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'neoclide/jsonc.vim'
 
 " elixir

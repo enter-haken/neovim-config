@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  devbox:
+    image: enter-haken/devbox
+    container_name: devbox
+    build:
+      context: .
+    tty: true
+

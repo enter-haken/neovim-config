@@ -6,17 +6,19 @@
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "diagnostic.maxWindowHeight": 32,
   "python.jediEnabled": false,
+  "tailwindCSS.headwind.removeDuplicates": true,
   "python.linting.pylintArgs": ["--generate-members"],
   "languageserver": {
     "robotframework_ls": {
       "command": "robotframework_ls",
       "filetypes": ["robot"]
-    },"terraform": {
-    "command": "terraform-ls",
-    "args": ["serve"],
-    "filetypes": ["terraform","tf"],
-    "initializationOptions":{},
-    "settings":{}
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform","tf"],
+      "initializationOptions":{},
+      "settings":{}
     }
   }
 }
