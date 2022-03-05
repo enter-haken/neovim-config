@@ -38,3 +38,8 @@ set nofoldenable
 set hidden
 
 nmap <Leader>a :Autoformat<CR>
+
+" robot framework filetype detection
+autocmd BufNewFile,BufRead *.robot setlocal filetype=robot
+
+let g:formatters_tf = ['terraform_format']
