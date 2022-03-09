@@ -11,8 +11,6 @@ Plug 'bling/vim-airline'
 Plug 'chiel92/vim-autoformat'
 Plug 'tpope/vim-fugitive'
 
-" language server related
-Plug 'neovim/nvim-lspconfig'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax highlighting for json files with comments
 " https://github.com/neoclide/jsonc.vim/blob/master/ftdetect/jsonc.vim
