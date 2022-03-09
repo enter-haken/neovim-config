@@ -1,4 +1,5 @@
 " needed for chiel92/vim-autoformat
+" https://github.com/vim-autoformat/vim-autoformat#requirement
 "
 " requirements:
 "
@@ -19,3 +20,5 @@
 " Successfully installed greenlet-0.4.17 msgpack-1.0.0 pynvim-0.4.2
 
 let g:python3_host_prog='/usr/bin/python3'
+
+nmap <Leader>a :Autoformat<CR>

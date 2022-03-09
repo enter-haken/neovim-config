@@ -2,9 +2,6 @@ colorscheme nord
 
 let mapleader=','
 
-nmap <Leader>n :NERDTreeToggle<CR>
-nmap <Leader>f :NERDTreeFind<CR>
-
 set title
 set number
 set ignorecase
@@ -37,9 +34,10 @@ set nofoldenable
 " switch buffers without saving
 set hidden
 
-nmap <Leader>a :Autoformat<CR>
-
 " robot framework filetype detection
 autocmd BufNewFile,BufRead *.robot setlocal filetype=robot
 
+" TODO: move to own file
 let g:formatters_tf = ['terraform_format']
+
+let g:netrw_dirhistmax = 0

@@ -5,17 +5,17 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'arcticicestudio/nord-vim'
 
 " general stuff
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'chiel92/vim-autoformat'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
 " language server related
 Plug 'neovim/nvim-lspconfig'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+" Syntax highlighting for json files with comments
+" https://github.com/neoclide/jsonc.vim/blob/master/ftdetect/jsonc.vim
 Plug 'neoclide/jsonc.vim'
 
 " elixir
