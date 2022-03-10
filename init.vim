@@ -5,3 +5,5 @@ runtime! NERDTree.vim
 runtime! lsp.vim
 runtime! autoformat.vim
 runtime! coc.vim
+runtime! vim-test.vim
+runtime! neoterm.vim

@@ -28,7 +28,6 @@ RUN git clone https://github.com/enter-haken/neovim-config ~/.config/nvim
 
 RUN cp ~/.config/nvim/.tool-versions .
 
-
 RUN echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc
 RUN echo ". $HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
 
@@ -79,7 +78,7 @@ RUN export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH" && \
   export KERL_INSTALL_MANPAGES=no && \
   export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac" && \
   (cat ~/plugins | while read i; do asdf plugin add $i; done || true) && \
-  (cat ~/versions | while read i; do asdf install $i; done) || true
+  (cat ~/versions | while read i; do asdf install $i; done || true)
 
 # install all plugs
 RUN PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH" && \
