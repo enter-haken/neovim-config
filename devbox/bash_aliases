@@ -1,3 +1,12 @@
 alias ..="cd .."
 alias vim="nvim"
 alias serve="python -m http.server"
+
+# when yes, compile erlang with docs
+# you can access erlang docs from iex
+export KERL_BUILD_DOCS=yes
+export EDITOR=nvim
+
+# vim bash mode
+set -o vi
+

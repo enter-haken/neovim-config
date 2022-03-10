@@ -21,10 +21,13 @@ RUN apt-get update \
 USER devbox
 WORKDIR /home/devbox
 
+COPY bash_aliases ./.bash_aliases
+
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
 RUN git clone https://github.com/enter-haken/neovim-config ~/.config/nvim
 
 RUN cp ~/.config/nvim/.tool-versions .
+
 
 RUN echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc
 RUN echo ". $HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
@@ -35,7 +38,11 @@ RUN sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/p
 # required for neovim
 RUN pip3 install pynvim requests --user
 
-RUN PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH" && \
+RUN export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH" && \
+  export KERL_BUILD_DOCS=yes && \
+  export KERL_INSTALL_HTMLDOCS=no && \
+  export KERL_INSTALL_MANPAGES=no && \
+  export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac" && \
   for i in $(cat .tool-versions | awk '{ print $1 }'); do asdf plugin add $i; done && \
   asdf install
 
@@ -53,21 +60,27 @@ WORKDIR /home/devbox
 RUN mkdir -p ./src/other/complete
 
 WORKDIR /home/devbox/src/
+
 RUN curl https://raw.githubusercontent.com/enter-haken/scripts/master/clone_or_pull.py | python3 - -u enter-haken
 
 RUN ln -s /home/devbox/src/enter-haken/scripts/clone_or_pull.py /home/devbox/.local/bin/clone_or_pull
 
-WORKDIR /home/devbox/src/other/complete
-RUN PATH="$HOME/.local/bin:$PATH" && \
-  clone_or_pull -u elixir-lang && \
-  clone_or_pull -u elixir-ecto && \
-  clone_or_pull -u elixir-nx && \
-  clone_or_pull -u elixir-plug && \
-  clone_or_pull -u erlang
-
 WORKDIR /home/devbox
 
-COPY bash_aliases ./.bash_aliases
 
+# find system wide unknown plugins and versions
+RUN for i in $(find . -name ".tool-versions"); do cat $i; done | sort | uniq > ~/versions && \
+  cat ~/versions | awk '{ print $1 }' | uniq > ~/plugins 
+
+# preinstall all used plugins and different versions, having a `.tool-versions` file
+RUN export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH" && \
+  export KERL_BUILD_DOCS=yes && \
+  export KERL_INSTALL_HTMLDOCS=no && \
+  export KERL_INSTALL_MANPAGES=no && \
+  export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac" && \
+  (cat ~/plugins | while read i; do asdf plugin add $i; done || true) && \
+  (cat ~/versions | while read i; do asdf install $i; done) || true
+
+# install all plugs
 RUN PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH" && \
   nvim +PlugInstall +qa
