@@ -4,9 +4,11 @@ FROM ubuntu:20.04
 RUN useradd -g sudo -ms /bin/bash devbox 
 RUN echo 'devbox:devbox' | chpasswd
 
-RUN apt-get update && apt-get install -y git unzip curl build-essential \ 
-  autoconf m4 libncurses5-dev libssh-dev python3-pip htop vim tmux tree \
-  ranger man-db sudo silversearcher-ag
+RUN apt-get update && apt-get install -y git unzip curl build-essential \
+  libxml2 xsltproc autoconf m4 libncurses5-dev libssh-dev python3-pip \
+  htop vim tmux tree ranger man-db sudo silversearcher-ag \
+  # ruby 
+  libreadline-dev
 
 # set up locale for elixir
 # at least one utf8 locale is needed
