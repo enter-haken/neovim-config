@@ -4,31 +4,30 @@ FROM ubuntu:20.04
 RUN useradd -g sudo -ms /bin/bash devbox 
 RUN echo 'devbox:devbox' | chpasswd
 
-RUN apt-get update && apt-get install -y git unzip curl build-essential \
-  libxml2 xsltproc autoconf m4 libncurses5-dev libssh-dev python3-pip \
-  htop vim tmux tree ranger man-db sudo silversearcher-ag \
-  # ruby 
-  libreadline-dev
-
 # set up locale for elixir
 # at least one utf8 locale is needed
 
-RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y locales \
+RUN export DEBIAN_FRONTEND=noninteractive \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends locales \
   && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
   && dpkg-reconfigure --frontend=noninteractive locales \
   && update-locale LANG=en_US.UTF-8 \
-  && locale-gen
+  && locale-gen \
+  && apt-get install -y --no-install-recommends git unzip curl build-essential \
+  libxml2 xsltproc autoconf automake m4 libncurses5-dev libssh-dev python3-pip \
+  htop vim tmux tree ranger man-db sudo silversearcher-ag tar gpg gpg-agent \
+  libreadline-dev
 
 USER devbox
 WORKDIR /home/devbox
 
 COPY bash_aliases ./.bash_aliases
+COPY .tool-versions .
 
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
 RUN git clone https://github.com/enter-haken/neovim-config ~/.config/nvim
 
-RUN cp ~/.config/nvim/.tool-versions .
 
 RUN echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc
 RUN echo ". $HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
@@ -67,7 +66,6 @@ RUN curl https://raw.githubusercontent.com/enter-haken/scripts/master/clone_or_p
 RUN ln -s /home/devbox/src/enter-haken/scripts/clone_or_pull.py /home/devbox/.local/bin/clone_or_pull
 
 WORKDIR /home/devbox
-
 
 # find system wide unknown plugins and versions
 RUN for i in $(find . -name ".tool-versions"); do cat $i; done | sort | uniq > ~/versions && \

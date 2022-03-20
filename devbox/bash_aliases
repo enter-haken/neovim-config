@@ -10,3 +10,4 @@ export EDITOR=nvim
 # vim bash mode
 set -o vi
 
+source ~/.asdf/installs/fzf/0.29.0/shell/key-bindings.bash
