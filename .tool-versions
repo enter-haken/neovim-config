@@ -4,3 +4,4 @@ neovim nightly
 nodejs 16.6.2
 yarn 1.22.10
 fzf 0.29.0
+rust 1.59.0
