@@ -1,6 +1,7 @@
 alias ..="cd .."
 alias vim="nvim"
 alias serve="python -m http.server"
+alias va="source venv/bin/activate"
 
 # when yes, compile erlang with docs
 # you can access erlang docs from iex
@@ -11,3 +12,6 @@ export EDITOR=nvim
 set -o vi
 
 source ~/.asdf/installs/fzf/0.29.0/shell/key-bindings.bash
+
+export PATH="~/.local/bin:$PATH"
+

@@ -36,7 +36,7 @@ RUN echo ". $HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
 RUN sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # required for neovim
-RUN pip3 install pynvim requests --user
+RUN pip3 install pynvim requests virtualenv --user
 
 RUN export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH" && \
   export KERL_BUILD_DOCS=yes && \

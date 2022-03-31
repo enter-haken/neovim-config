@@ -1,6 +1,6 @@
 # devbox
 
-Docker container using my current neovim config.
+This **devbox** reflects my current vim configuration. 
 
 ## quickstart
 
@@ -15,3 +15,19 @@ $ make exec
 ```
 
 let you enter the container.
+
+## usage
+
+You can use this container for editing 
+
+* Elixir
+* Rust
+* Python
+* TypeScript
+* Docker
+* Json
+* Bash scripts
+* Tailwind CSS
+* Yaml file
+
+with **language server** assistance.
