@@ -4,8 +4,13 @@
   // cd ~/.elixir-ls
   // mix deps.get && mix compile && mix elixir_ls.release -o release
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "elixirLS.suggestSpecs": true,
+  "elixirLS.dialyzerEnabled": true,
+  "codeLens.enable": true,
+  "suggest.enablePreselect":true,
   "python.jediEnabled": false,
   "tailwindCSS.headwind.removeDuplicates": true,
+  "tailwindCSS.includeLanguages": { "phoenix-heex": "html" },
   "python.linting.pylintArgs": ["--generate-members"],
   "languageserver": {
     "robotframework_ls": {
