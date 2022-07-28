@@ -10,7 +10,7 @@
   "suggest.enablePreselect":true,
   "python.jediEnabled": false,
   "tailwindCSS.headwind.removeDuplicates": true,
-  "tailwindCSS.includeLanguages": { "phoenix-heex": "html" },
+  "tailwindCSS.trace.server": "verbose",
   "python.linting.pylintArgs": ["--generate-members"],
   "languageserver": {
     "robotframework_ls": {

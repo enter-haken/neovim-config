@@ -10,7 +10,7 @@ let g:coc_global_extensions = [
       \'coc-rls',
       \'coc-sh',
       \'coc-snippets', 
-      \'coc-tailwindcss',
+      \'@yaegassy/coc-tailwindcss3',
       \'coc-tsserver', 
       \'coc-yaml'
       \]
