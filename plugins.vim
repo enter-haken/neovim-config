@@ -22,4 +22,8 @@ Plug 'neoclide/jsonc.vim'
 " elixir
 Plug 'elixir-editors/vim-elixir'
 
+" terraform
+
+Plug 'hashivim/vim-terraform'
+
 call plug#end()
