@@ -21,4 +21,13 @@
 
 let g:python3_host_prog='/usr/bin/python3'
 
+let g:formatdef_sqlformat = '"pg_format --wrap-limit 80 --keep-newline"'
+let g:formatters_sql = ['sqlformat']
+
+"" let g:custom_prettier = '"prettier --stdin-filepath ".expand("%:p").(&textwidth ? " --print-width ".&textwidth : "")." --tab-width=".shiftwidth()'
+
+let g:formatdef_custom_prettier = '"prettier --stdin-filepath ".expand("%:p").(&textwidth ? " --print-width ".&textwidth : "")." --tab-width=2 --print-width=80 --prose-wrap=always"'
+
+let g:formatters_markdown = ['custom_prettier']
+
 nmap <Leader>a :Autoformat<CR>

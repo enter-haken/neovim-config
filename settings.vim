@@ -6,6 +6,8 @@ set title
 set number
 set ignorecase
 
+set mouse=n
+
 " Umlaute
 set termencoding=utf8
 set enc=utf8
@@ -41,3 +43,5 @@ autocmd BufNewFile,BufRead *.robot setlocal filetype=robot
 let g:formatters_tf = ['terraform_format']
 
 let g:netrw_dirhistmax = 0
+
+" nmap <silent> <leader>t :tabNext<CR>

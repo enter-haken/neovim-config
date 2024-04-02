@@ -14,6 +14,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-test/vim-test'
 Plug 'kassio/neoterm'
 
+Plug 'ryicoh/deepl.vim'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax highlighting for json files with comments
 " https://github.com/neoclide/jsonc.vim/blob/master/ftdetect/jsonc.vim

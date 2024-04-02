@@ -7,3 +7,4 @@ runtime! autoformat.vim
 runtime! coc.vim
 runtime! vim-test.vim
 runtime! neoterm.vim
+runtime! deepl.vim
